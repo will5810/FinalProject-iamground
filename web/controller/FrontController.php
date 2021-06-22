@@ -25,6 +25,9 @@
         public function run(){
             
             switch($this->query){
+                case "action=loginForm":
+                    $this->controlView("loginForm.php");
+                    break;
                 case "action=login":
                     //echo $this->query;
                     $this->controller = new UserController();
@@ -34,13 +37,17 @@
                 case "action=moList":
                     //echo $this->query;
                     $this->controller = new MoController();
-                    $this->controller->cSelectMoByMapId('000001');
+                    $this->controller->cSelectMoByMapId($_POST['mId']);
                     break;
                 case "action=mapList":
                     $this->controller = new MapController();
                     session_start();
-                    //$this->controller->cSelectMapByUserId($_SESSION['uid']);
-                    $this->controller->cSelectMapByUserId('yun');
+                    $this->controller->cSelectMapByUserId($_SESSION['userId']);
+                    //$this->controller->cSelectMapByUserId('yun');
+                    break;
+                case "action=monitoring":
+                    $this->controller = new MapController();
+                    $this->controller->cMonitoringByMoId($_POST['moId']);
                     break;
             }
             
@@ -66,8 +73,7 @@
         public function controlView($view, $responseData=null){
             echo "<script> console.log('controlView'); </script>";
             $this->responseData = $responseData;     
-            //var_dump($this->responseData); 
-            echo '11';  
+            //var_dump($this->responseData);            
             require './view/'.$view;
         }
 
