@@ -49,6 +49,9 @@
                     $this->controller = new MapController();
                     $this->controller->cMonitoringByMoId($_POST['moId']);
                     break;
+                case "action=manager":
+                    $this->controlView("manager.php");
+                    break;
             }
             
         }
