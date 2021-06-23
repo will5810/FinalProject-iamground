@@ -29,9 +29,16 @@
                     session_start();
                     $_SESSION['userId']=$userDTO->getUserId();
                     $_SESSION['userType']=$userDTO->getUserType();
-                    $this->view = 'mapList.php';
-                    
-                    $this->returnView();
+                    //$this->view = 'mapList.php';
+                    //$this->returnView();
+                   // if($useDTO->getUserType()=='4'){
+                   // $frontController = new FrontController('action=manager');
+                   // $frontController->run();
+                   // }
+                   // else{
+                    $frontController = new FrontController('action=mapList');
+                    $frontController->run();
+                   // }
                 } else {                     
                     $this->data = 'wrong password';
                     $this->view = 'loginForm.php';
