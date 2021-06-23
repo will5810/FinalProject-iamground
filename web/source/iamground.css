@@ -1,0 +1,48 @@
+.container{
+    position: absolute;    
+    top: 50%;
+    left: 50%; 
+    width: 90%;                 
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.logoI{
+    color : #274e13;
+}
+
+.logoAM{
+    color : #38761d;
+}
+
+.logoGround{
+    color : #6aa84f;
+}
+
+.btnLogin{
+    padding-top: 30%;
+    padding-bottom: 30%;
+    background-color: #b6d7a8;        
+}
+
+#loginTable{
+    width: 320px;
+    text-align: right;
+    margin: auto;
+
+}
+
+.lists {
+    background-color: #6aa84f;
+    padding: 3px;
+}
+
+.lists .list{
+    background-color: #b6d7a8; 
+    margin: 2px;
+    margin-bottom: 5px;
+    padding: 20px;
+}
+.lists form{
+    margin: 0px;
+}
