@@ -32,6 +32,13 @@
             
         }
 
+        public function cMonitoringByMoId($moId){
+            $dtoArr = $this->dao->mMonitoringByMoId($moId);
+            $this->data = 'OK';
+            $this->view = 'monitoring.php';
+            $this->returnView($dtoArr);
+        }
+
 
     }
 
