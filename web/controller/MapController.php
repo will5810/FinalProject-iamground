@@ -38,7 +38,18 @@
             $this->view = 'monitoring.php';
             $this->returnView($dtoArr);
         }
-
+        /*
+        public function cInsertMapImage($mapImage){
+            echo "<script> console.log('cInsertMapImage() called'); </script>";
+            $targetDir = "uploads/";
+            $targetFile = $targetDir . basename($mapImage);
+            var_dump($mapImage);
+            move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+            $file = fopen($_FILES["fileToUpload"]["tmp_name"], 'rb');
+            var_dump($file);
+            $this->dao->mInsertMapImage($file);
+        }
+        */
 
     }
 
