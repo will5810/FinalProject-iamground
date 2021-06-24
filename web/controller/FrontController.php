@@ -52,6 +52,22 @@
                 case "action=manager":
                     $this->controlView("manager.php");
                     break;
+                case "action=joinform";
+                    echo "<script> console.log('action=joinform load'); </script>"; 
+                    $this->controlView("joinform.php");
+                    break;
+                case "action=join":
+                    echo "<script> console.log('action=join load'); </script>";
+                    $this->controller = new UserController();
+                    $this->controller->join();
+                    break;
+                /*
+                case "action=imageUpload":
+                    $this->controller = new MapController();
+                    var_dump($_FILES["fileToUpload"]["name"]);
+                    $this->controller->cInsertMapImage($_FILES["fileToUpload"]["name"]);
+                    break;
+                */
             }
             
         }
